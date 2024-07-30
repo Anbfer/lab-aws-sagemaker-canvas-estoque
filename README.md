@@ -13,15 +13,16 @@
 
 - Iniciei o treinamento do modelo com o quickbuild
 - Após a conclusão tive as seguintes métricas da análise:
-
-![image](https://github.com/user-attachments/assets/8c7fad9b-30b3-473c-a99e-d9762afed180)
+>
+> ![image](https://github.com/user-attachments/assets/8c7fad9b-30b3-473c-a99e-d9762afed180)
 - As seguintes colunas impactaram no resultado da análise:
-
-![image](https://github.com/user-attachments/assets/3215b33e-ebf0-4fdd-9ad3-646ca62b1c16)
+>
+> ![image](https://github.com/user-attachments/assets/3215b33e-ebf0-4fdd-9ad3-646ca62b1c16)
 
 - Usei a opção de gerar as predições única:
-- Obtive o seguinte resultado para a predição de preço do produto de ID 1:
+> Obtive o seguinte resultado para a predição de preço do produto de ID 1:
+>
+> ![single_prediction_results](https://github.com/user-attachments/assets/6ee49e2d-4ca1-4044-9d59-038992fc5ebe)
 
-![single_prediction_results](https://github.com/user-attachments/assets/6ee49e2d-4ca1-4044-9d59-038992fc5ebe)
-
-- Com base na demanda história podemos análizar que os valores P10, P50 indicam uma queda no preço, para os próximos 9 dias, de um ponto de vista mais realista, é condizente com a demanda do produto, que enfrentou uma queda considerável, conforme demonstrado pela linha de demanda histórica.
+- Com base na demanda histórica, os valores P10, P50 indicam uma queda no preço, para os próximos 9 dias.
+- Um ponto de vista mais realista, é condizente com a demanda do produto, que enfrentou uma queda considerável, conforme demonstrado pela linha de demanda histórica.
