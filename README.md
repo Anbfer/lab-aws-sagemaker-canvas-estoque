@@ -1,47 +1,27 @@
 # 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
+#### Dataset escolhido
+- Utilizei o dataset dataset-1000-com-preco-variavel-e-renovacao-estoque.csv para realizar a análise preditiva da variação de preço
+- Importei os dados e configuerei as variáveis de entrada e saída.
+> Marquei como target o `PRECO`
+> Selecionei a coluna identificadora `ID_PRODUTO`
+> A coluna responsável pela marcação de tempo `DATA_EVENTO`
+> Selecionei o intervalo para previsão dos dados de 9 dias no futuro
+> Pedi para que o modelo levasse em consideração os feriados no Brasil para realizar a sua análise
+> Os valores ausentes serão substituidos por 0 na coluna `PRECO`
+> Os valores ausentes serão substituidos pela mediana na coluna `QUANTIDADE_ESTOQUE`
 
-## 📋 Pré-requisitos
+- Iniciei o treinamento do modelo com o quickbuild
+- Após a conclusão tive as seguintes métricas da análise:
 
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
+![image](https://github.com/user-attachments/assets/8c7fad9b-30b3-473c-a99e-d9762afed180)
+- As seguintes colunas impactaram no resultado da análise:
 
+![image](https://github.com/user-attachments/assets/3215b33e-ebf0-4fdd-9ad3-646ca62b1c16)
 
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
+- Usei a opção de gerar as predições única:
+- Obtive o seguinte resultado para a predição de preço do produto de ID 1:
 
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
+![single_prediction_results](https://github.com/user-attachments/assets/6ee49e2d-4ca1-4044-9d59-038992fc5ebe)
 
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
-
-
-## 🚀 Passo a Passo
-
-### 1. Selecionar Dataset
-
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
-
-### 2. Construir/Treinar
-
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
-
-### 3. Analisar
-
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
-
-### 4. Prever
-
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+- Com base na demanda história podemos análizar que os valores P10, P50 indicam uma queda no preço, para os próximos 9 dias, de um ponto de vista mais realista, é condizente com a demanda do produto, que enfrentou uma queda considerável, conforme demonstrado pela linha de demanda histórica.
